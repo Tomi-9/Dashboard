@@ -72,7 +72,6 @@ export async function createInvoice(prevState: State, formData: FormData) {
   redirect('/dashboard/invoices');
 }
 
-
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
  
 export async function updateInvoice(id: string, formData: FormData) {
@@ -93,7 +92,6 @@ export async function updateInvoice(id: string, formData: FormData) {
   } catch (error) {
     // We'll also log the error to the console for now
     console.error(error);
-    return { message: 'Database Error: Failed to Update Invoice.' };
   }
  
   revalidatePath('/dashboard/invoices');
